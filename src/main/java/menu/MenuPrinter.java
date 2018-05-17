@@ -11,7 +11,7 @@ public class MenuPrinter {
     private final StringBuilder stringBuilder = new StringBuilder();
 
     public void printMenu() {
-        stringBuilder.append(HEADER_MESSAGE);
+        stringBuilder.append(HEADER_MESSAGE).append(System.lineSeparator());
         List<String> menuChoicesCommands = menuChoices.getMenuChoicesCommands();
         menuChoicesCommands.stream()
                 .forEach(s -> stringBuilder.append(s).append(System.lineSeparator()));
