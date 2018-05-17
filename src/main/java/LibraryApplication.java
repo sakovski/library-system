@@ -13,18 +13,16 @@ public class LibraryApplication {
     public void run() {
         menuPrinter.printWelcomeMessage();
 
-        do {
+        while (true) {
             try {
                 menuPrinter.printMenu();
                 String userInput = userInputReader.getUserInput();
                 MenuCommand menuCommand = new MenuCommand(userInput);
                 CommandExecutor<MenuCommand> menuCommandExecutor = menuCommandExecutorProvider.getExecutor(menuCommand);
                 menuCommandExecutor.execute(menuCommand);
-            } catch(Exception e) {
+            } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
-
-        } while(true);
-
+        }
     }
 }

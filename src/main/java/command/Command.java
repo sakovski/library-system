@@ -8,6 +8,6 @@ public abstract class Command {
     }
 
     public String getName() {
-        return this.getName();
+        return this.name;
     }
 }
