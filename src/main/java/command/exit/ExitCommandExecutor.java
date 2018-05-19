@@ -1,12 +1,11 @@
 package command.exit;
 
 import command.CommandExecutor;
-import command.menu.MenuCommand;
 
-public class ExitCommandExecutor implements CommandExecutor<MenuCommand> {
+public class ExitCommandExecutor implements CommandExecutor {
 
     @Override
-    public void execute(MenuCommand command) {
+    public void execute(String command) {
         System.out.println("Bye!");
         System.exit(0);
     }

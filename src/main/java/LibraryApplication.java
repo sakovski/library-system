@@ -1,5 +1,4 @@
 import command.CommandExecutor;
-import command.menu.MenuCommand;
 import command.menu.MenuCommandExecutorProvider;
 import core.UserInputReader;
 import menu.MenuPrinter;
@@ -17,9 +16,8 @@ public class LibraryApplication {
             try {
                 menuPrinter.printMenu();
                 String userInput = userInputReader.getUserInput();
-                MenuCommand menuCommand = new MenuCommand(userInput);
-                CommandExecutor<MenuCommand> menuCommandExecutor = menuCommandExecutorProvider.getExecutor(menuCommand);
-                menuCommandExecutor.execute(menuCommand);
+                CommandExecutor commandExecutor = menuCommandExecutorProvider.getExecutor(userInput);
+                commandExecutor.execute(userInput);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }

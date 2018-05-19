@@ -1,12 +1,11 @@
 package command.readersReport;
 
 import command.CommandExecutor;
-import command.menu.MenuCommand;
 
-public class ReadersReportCommandExecutor implements CommandExecutor<MenuCommand> {
+public class ReadersReportCommandExecutor implements CommandExecutor {
 
     @Override
-    public void execute(MenuCommand command) {
+    public void execute(String command) {
 
     }
 }

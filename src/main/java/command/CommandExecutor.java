@@ -1,6 +1,6 @@
 package command;
 
-public interface CommandExecutor<T extends Command> {
+public interface CommandExecutor {
 
-    void execute(T command);
+    void execute(String command);
 }

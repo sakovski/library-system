@@ -1,12 +1,11 @@
 package command.rent;
 
 import command.CommandExecutor;
-import command.menu.MenuCommand;
 
-public class RentBookCommandExecutor implements CommandExecutor<MenuCommand> {
+public class RentBookCommandExecutor implements CommandExecutor {
 
     @Override
-    public void execute(MenuCommand command) {
+    public void execute(String command) {
 
     }
 }

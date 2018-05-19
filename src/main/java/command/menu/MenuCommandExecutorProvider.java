@@ -19,28 +19,28 @@ public class MenuCommandExecutorProvider {
     private CommandExecutor readersReportCommandExecutor = new ReadersReportCommandExecutor();
     private ExitCommandExecutor exitCommandExecutor = new ExitCommandExecutor();
 
-    public CommandExecutor getExecutor(MenuCommand menuCommand) {
-        if(menuCommand.getName().equals("1")) {
+    public CommandExecutor getExecutor(String userInput) {
+        if(userInput.equals("1")) {
             return addNewBookCommandExecutor;
         }
-        if(menuCommand.getName().equals("2")) {
+        if(userInput.equals("2")) {
             return deleteBookCommandExecutor;
         }
-        if(menuCommand.getName().equals("3")) {
+        if(userInput.equals("3")) {
             return searchBookByPropertyCommandExecutor;
         }
-        if(menuCommand.getName().equals("4")) {
+        if(userInput.equals("4")) {
             return searchBooksByTimeUnrentedCommandExecutor;
         }
-        if(menuCommand.getName().equals("5")) {
+        if(userInput.equals("5")) {
             return rentBookCommandExecutor;
         }
-        if(menuCommand.getName().equals("6")) {
+        if(userInput.equals("6")) {
             return readersReportCommandExecutor;
         }
-        if(menuCommand.getName().equals("Q")) {
+        if(userInput.equals("Q")) {
             return exitCommandExecutor;
         }
-        throw new RuntimeException("Wrong menu choice: " + menuCommand.getName());
+        throw new RuntimeException("Wrong menu choice: " + userInput);
     }
 }

@@ -1,12 +1,11 @@
 package command.search;
 
 import command.CommandExecutor;
-import command.menu.MenuCommand;
 
-public class SearchBooksByTimeUnrentedCommandExecutor implements CommandExecutor<MenuCommand> {
+public class SearchBooksByTimeUnrentedCommandExecutor implements CommandExecutor {
 
     @Override
-    public void execute(MenuCommand command) {
+    public void execute(String command) {
 
     }
 }
