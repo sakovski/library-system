@@ -1,6 +1,6 @@
 package book;
 
-import reader.Reader;
+import libraryuser.LibraryUser;
 
 import java.time.LocalDate;
 
@@ -9,16 +9,16 @@ public class Book {
     private final String title;
     private final String author;
     private final String isbnNumber;
-    private final LocalDate dateLastRent;
-    private final Reader currentReader;
-    private final boolean isRented;
+    private LocalDate dateLastRent;
+    private LibraryUser currentLibraryUser;
+    public boolean isRented;
 
     public Book(String title, String author, String isbnNumber) {
         this.title = title;
         this.author = author;
         this.isbnNumber = isbnNumber;
         dateLastRent = null;
-        currentReader = null;
+        currentLibraryUser = null;
         isRented = false;
     }
 
@@ -38,11 +38,15 @@ public class Book {
         return this.dateLastRent;
     }
 
-    public Reader getCurrentReader() {
-        return this.currentReader;
+    public LibraryUser getCurrentLibraryUser() {
+        return this.currentLibraryUser;
     }
 
-    public boolean isRented() {
-        return this.isRented;
+    public void setCurrentLibraryUser(LibraryUser libraryUser) {
+        this.currentLibraryUser = libraryUser;
+    }
+
+    public void setDateLastRent(LocalDate date) {
+        this.dateLastRent = date;
     }
 }

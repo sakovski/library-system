@@ -1,5 +1,7 @@
 package book;
 
+import libraryuser.LibraryUser;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -11,24 +13,18 @@ public class BookRepository {
 
     public void save(Book book) {
         books.add(book);
-        printBoooks();
     }
-
-    private void printBoooks() { //ONLY TO DEBUG!
-        books.stream()
-                .forEach(b -> System.out.print(b.getAuthor() + ";" + b.getTitle() + ";" + b.getIsbnNumber() + System.lineSeparator()));
-       // System.out.print(books.get(0).getTitle() + books.get(0).getAuthor() + books.get(0).getIsbnNumber());
-    }
-
 
     public void remove(Book book) {
         books.remove(book);
     }
 
-    public Optional<Book> findBookInRepository(String title, String author, String isbnNumber) {
+    public List<Book> findBooksInRepositoryByProperties(String title, String author, String isbnNumber) {
         return books.stream()
-                .filter(i -> i.getIsbnNumber().equals(isbnNumber)) //TODO: TO CHANGE
-                .findFirst();
+                .filter(i -> i.getIsbnNumber().equals(isbnNumber))
+                .filter(i -> i.getAuthor().equals(author))
+                .filter(i -> i.getTitle().equals(title))
+                .collect(Collectors.toList());
     }
 
     public List<Book> findBooksByAuthor(String author) {
@@ -48,4 +44,5 @@ public class BookRepository {
                 .filter(b -> b.getIsbnNumber().equals(isbnNumber))
                 .collect(Collectors.toList());
     }
+
 }
