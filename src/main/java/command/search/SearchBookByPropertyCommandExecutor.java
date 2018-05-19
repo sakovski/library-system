@@ -20,7 +20,7 @@ public class SearchBookByPropertyCommandExecutor implements CommandExecutor {
     private final SearchReportService searchReportService = new SearchReportService();
 
     @Override
-    public void execute(String command) {
+    public void execute() {
         System.out.println(String.format(INFO_MESSAGE, TITLE_PREFIX, AUTHOR_PREFIX, ISBN_PREFIX));
         String argument = searchBookByPropertyArgumentsReader.readArgumentsFromUser();
         SearchBookByPropertyArgument searchBookByPropertyArgument = searchBookByPropertyArgumentsParser.parseUserArgument(argument);

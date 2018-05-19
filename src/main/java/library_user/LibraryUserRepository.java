@@ -1,4 +1,4 @@
-package libraryuser;
+package library_user;
 
 import book.Book;
 
@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public class LibraryUserRepository {
 
-    private final List<LibraryUser> libraryUsers = new ArrayList<>();
+    private static final List<LibraryUser> libraryUsers = new ArrayList<>();
 
     public Optional<LibraryUser> getUserFromRepository(String firstname, String lastname) {
         return libraryUsers.stream()
@@ -22,12 +22,11 @@ public class LibraryUserRepository {
         return libraryUser;
     }
 
+    public List<LibraryUser> getLibraryUsers() {
+        return libraryUsers;
+    }
+
     public void addBookToLibraryUser(LibraryUser user, Book book) {
-
+        user.getRentedBooks().add(book);
     }
-
-    public void removeBookFromLibraryUser() {
-
-    }
-
 }

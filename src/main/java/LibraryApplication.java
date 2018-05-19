@@ -17,7 +17,7 @@ public class LibraryApplication {
                 menuPrinter.printMenu();
                 String userInput = userInputReader.getUserInput();
                 CommandExecutor commandExecutor = menuCommandExecutorProvider.getExecutor(userInput);
-                commandExecutor.execute(userInput);
+                commandExecutor.execute();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }

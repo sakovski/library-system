@@ -1,4 +1,4 @@
-package libraryuser;
+package library_user;
 
 import book.Book;
 
@@ -26,4 +26,8 @@ public class LibraryUser {
     }
 
     public String getFullInfo() {return this.firstname + " " + this.lastname;}
+
+    public List<Book> getRentedBooks() {return this.rentedBooks;}
+
+    public int getAmountOfRentedBooks() {return this.rentedBooks.size();}
 }

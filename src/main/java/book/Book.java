@@ -1,6 +1,6 @@
 package book;
 
-import libraryuser.LibraryUser;
+import library_user.LibraryUser;
 
 import java.time.LocalDate;
 

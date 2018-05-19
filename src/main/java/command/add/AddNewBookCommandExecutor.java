@@ -9,7 +9,7 @@ public class AddNewBookCommandExecutor implements CommandExecutor {
     private final BookService bookService = new BookService();
 
     @Override
-    public void execute(String command) {
+    public void execute() {
         System.out.println("*New book creator*");
         AddDeleteBookArguments addNewBookArguments = addNewBookArgumentsReader.readArgumentsFromUser();
         bookService.addToRepository(addNewBookArguments.getTitle(), addNewBookArguments.getAuthor(), addNewBookArguments.getIsbnNumber());

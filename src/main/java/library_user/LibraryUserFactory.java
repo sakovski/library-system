@@ -1,4 +1,4 @@
-package libraryuser;
+package library_user;
 
 public class LibraryUserFactory {
 

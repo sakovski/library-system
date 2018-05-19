@@ -1,9 +1,9 @@
 package command.rent;
 
 import core.UserInputReader;
-import libraryuser.LibraryUser;
+import library_user.LibraryUser;
 
-public class UserLibraryPropertiesReader {
+public class LibraryUserPropertiesReader {
 
     private final UserInputReader userInputReader = new UserInputReader();
 

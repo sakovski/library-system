@@ -1,10 +1,9 @@
 package book;
 
-import libraryuser.LibraryUser;
+import library_user.LibraryUser;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 public class BookService {
 

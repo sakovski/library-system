@@ -5,7 +5,7 @@ import command.CommandExecutor;
 public class SearchBooksByTimeUnrentedCommandExecutor implements CommandExecutor {
 
     @Override
-    public void execute(String command) {
+    public void execute() {
 
     }
 }

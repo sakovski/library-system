@@ -4,7 +4,7 @@ import command.CommandExecutor;
 import command.add.AddNewBookCommandExecutor;
 import command.delete.DeleteBookCommandExecutor;
 import command.exit.ExitCommandExecutor;
-import command.readersReport.ReadersReportCommandExecutor;
+import command.library_users_report.LibraryUsersReportCommandExecutor;
 import command.rent.RentBookCommandExecutor;
 import command.search.SearchBookByPropertyCommandExecutor;
 import command.search.SearchBooksByTimeUnrentedCommandExecutor;
@@ -16,7 +16,7 @@ public class MenuCommandExecutorProvider {
     private CommandExecutor searchBookByPropertyCommandExecutor = new SearchBookByPropertyCommandExecutor();
     private CommandExecutor searchBooksByTimeUnrentedCommandExecutor = new SearchBooksByTimeUnrentedCommandExecutor();
     private CommandExecutor rentBookCommandExecutor = new RentBookCommandExecutor();
-    private CommandExecutor readersReportCommandExecutor = new ReadersReportCommandExecutor();
+    private CommandExecutor readersReportCommandExecutor = new LibraryUsersReportCommandExecutor();
     private ExitCommandExecutor exitCommandExecutor = new ExitCommandExecutor();
 
     public CommandExecutor getExecutor(String userInput) {

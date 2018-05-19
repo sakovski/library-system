@@ -11,7 +11,7 @@ public class DeleteBookCommandExecutor implements CommandExecutor {
     private final BookService bookService = new BookService();
 
     @Override
-    public void execute(String command) {
+    public void execute() {
         System.out.println("*Delete Book*");
         AddDeleteBookArguments deleteBookArguments = deleteBookArgumentsReader.readArgumentsFromUser();
         bookService.removeFromRepository(deleteBookArguments.getTitle(), deleteBookArguments.getAuthor(), deleteBookArguments.getIsbnNumber());

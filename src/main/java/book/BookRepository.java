@@ -1,15 +1,12 @@
 package book;
 
-import libraryuser.LibraryUser;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class BookRepository {
 
-    public static final List<Book> books = new ArrayList<>();
+    private static final List<Book> books = new ArrayList<>();
 
     public void save(Book book) {
         books.add(book);
