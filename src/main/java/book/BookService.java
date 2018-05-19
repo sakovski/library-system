@@ -1,5 +1,6 @@
 package book;
 
+import java.util.List;
 import java.util.Optional;
 
 public class BookService {
@@ -13,6 +14,19 @@ public class BookService {
         Book newBook = bookFactory.createBook(title, author, isbnNumber);
         bookRepository.save(newBook);
     }
+
+    public List<Book> findBookByAuthor(String author) {
+        return bookRepository.findBooksByAuthor(author);
+    }
+
+    public List<Book> findBookByTitle(String title) {
+        return bookRepository.findBooksByTitle(title);
+    }
+
+    public List<Book> findBookByIsbn(String isbn) {
+        return bookRepository.findBooksByIsbn(isbn);
+    }
+
     /*
     public void removeFromRepository(String title, String isbnNumber) {
         Book bookToRemove = bookRepository.findByIsbnNumber(isbnNumber)

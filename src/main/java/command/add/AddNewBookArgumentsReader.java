@@ -6,8 +6,8 @@ public class AddNewBookArgumentsReader {
 
     private final UserInputReader userInputReader = new UserInputReader();
 
-    public BookArguments readArgumentsFromUser() {
-        return new BookArguments(readTitle(), readAuthor(), readIsbnNumber());
+    public AddNewBookArguments readArgumentsFromUser() {
+        return new AddNewBookArguments(readTitle(), readAuthor(), readIsbnNumber());
     }
 
     private String readAuthor() {

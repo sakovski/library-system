@@ -3,6 +3,7 @@ package book;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class BookRepository {
 
@@ -28,5 +29,23 @@ public class BookRepository {
         return books.stream()
                 .filter(i -> i.getIsbnNumber().equals(isbnNumber)) //TODO: TO CHANGE
                 .findFirst();
+    }
+
+    public List<Book> findBooksByAuthor(String author) {
+        return books.stream()
+                .filter(b -> b.getAuthor().equals(author))
+                .collect(Collectors.toList());
+    }
+
+    public List<Book> findBooksByTitle(String title) {
+        return books.stream()
+                .filter(b -> b.getTitle().equals(title))
+                .collect(Collectors.toList());
+    }
+
+    public List<Book> findBooksByIsbn(String isbnNumber) {
+        return books.stream()
+                .filter(b -> b.getIsbnNumber().equals(isbnNumber))
+                .collect(Collectors.toList());
     }
 }

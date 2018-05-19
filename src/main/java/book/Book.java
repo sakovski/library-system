@@ -33,4 +33,16 @@ public class Book {
     public String getIsbnNumber() {
         return this.isbnNumber;
     }
+
+    public LocalDate getDateLastRent() {
+        return this.dateLastRent;
+    }
+
+    public Reader getCurrentReader() {
+        return this.currentReader;
+    }
+
+    public boolean isRented() {
+        return this.isRented;
+    }
 }
