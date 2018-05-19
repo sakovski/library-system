@@ -13,11 +13,11 @@ public class LibraryUserPropertiesReader {
 
     private String readFirstName() {
         System.out.println("Firstname: ");
-        return userInputReader.getUserInput();
+        return userInputReader.getUserInput().trim();
     }
 
     private String readLastName() {
         System.out.println("Lastname: ");
-        return userInputReader.getUserInput();
+        return userInputReader.getUserInput().trim();
     }
 }
