@@ -1,11 +1,11 @@
 package command.add;
 
-public class AddNewBookArguments {
+public class AddDeleteBookArguments {
     private final String title;
     private final String author;
     private final String isbnNumber;
 
-    public AddNewBookArguments(String title, String author, String isbnNumber) {
+    public AddDeleteBookArguments(String title, String author, String isbnNumber) {
         this.title = title;
         this.author = author;
         this.isbnNumber = isbnNumber;

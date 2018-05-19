@@ -27,11 +27,9 @@ public class BookService {
         return bookRepository.findBooksByIsbn(isbn);
     }
 
-    /*
     public void removeFromRepository(String title, String isbnNumber) {
         Book bookToRemove = bookRepository.findByIsbnNumber(isbnNumber)
                 .orElseThrow(() -> new RuntimeException(String.format(NO_FOUND_ERROR_MESSAGE, title)));
         bookRepository.remove(bookToRemove);
     }
-    */
 }

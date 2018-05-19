@@ -2,12 +2,12 @@ package command.add;
 
 import core.UserInputReader;
 
-public class AddNewBookArgumentsReader {
+public class AddDeleteBookArgumentsReader {
 
     private final UserInputReader userInputReader = new UserInputReader();
 
-    public AddNewBookArguments readArgumentsFromUser() {
-        return new AddNewBookArguments(readTitle(), readAuthor(), readIsbnNumber());
+    public AddDeleteBookArguments readArgumentsFromUser() {
+        return new AddDeleteBookArguments(readTitle(), readAuthor(), readIsbnNumber());
     }
 
     private String readAuthor() {
