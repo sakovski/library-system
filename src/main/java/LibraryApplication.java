@@ -8,8 +8,11 @@ public class LibraryApplication {
     private MenuPrinter menuPrinter = new MenuPrinter();
     private UserInputReader userInputReader = new UserInputReader();
     private MenuCommandExecutorProvider menuCommandExecutorProvider = new MenuCommandExecutorProvider();
+    private LibraryInitializer libraryInitializer = new LibraryInitializer();
 
-    public void run() {
+    public void run(String[] arguments) {
+        System.out.println(arguments[0]);
+        libraryInitializer.initializeFromFilePath(arguments[0]);
         menuPrinter.printWelcomeMessage();
 
         while (true) {
