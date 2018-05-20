@@ -10,7 +10,7 @@ public class Book {
     private final String author;
     private final String isbnNumber;
     private LocalDate dateLastRent;
-    private LibraryUser currentLibraryUser;
+    private LibraryUser lastLibraryUser;
     public boolean isRented;
 
     public Book(String title, String author, String isbnNumber) {
@@ -18,9 +18,17 @@ public class Book {
         this.author = author;
         this.isbnNumber = isbnNumber;
         dateLastRent = LocalDate.now();
-        currentLibraryUser = null;
+        lastLibraryUser = null;
         isRented = false;
     }
+
+    public Book(String title, String author, String isbnNumber, boolean isRented, LibraryUser lastLibraryUser, LocalDate dateLastRent) {
+        this(title, author, isbnNumber);
+        this.isRented = isRented;
+        this.lastLibraryUser = lastLibraryUser;
+        this.dateLastRent = dateLastRent;
+    }
+
 
     public String getTitle () {
         return this.title;
@@ -39,11 +47,11 @@ public class Book {
     }
 
     public LibraryUser getCurrentLibraryUser() {
-        return this.currentLibraryUser;
+        return this.lastLibraryUser;
     }
 
     public void setCurrentLibraryUser(LibraryUser libraryUser) {
-        this.currentLibraryUser = libraryUser;
+        this.lastLibraryUser = libraryUser;
     }
 
     public void setDateLastRent(LocalDate date) {

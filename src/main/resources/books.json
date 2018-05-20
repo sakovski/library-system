@@ -2,71 +2,211 @@
   {
     "title": "Harry Potter And The Goblet Of Fire",
     "author": "J.K. Rowling",
-    "ISBN": "0439139600"
+    "ISBN": "0439139600",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 1,
+      "day" : 1
+    }
   },
   {
     "title": "Harry Potter And The Goblet Of Fire",
     "author": "J.K. Rowling",
-    "ISBN": "0439139600"
+    "ISBN": "0439139600",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "Alan",
+      "lastname" : "Wellbeck"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 2,
+      "day" : 1
+    }
   },
   {
     "title": "Harry Potter And The Goblet Of Fire",
     "author": "J.K. Rowling",
-    "ISBN": "0439139600"
+    "ISBN": "0439139600",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "Martin",
+      "lastname" : "Higgins"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 3,
+      "day" : 1
+    }
   },
   {
-  "title": "Harry Potter And The Order Of The Phoenix",
-  "author": "J.K. Rowling",
-  "ISBN": "0439358078"
+    "title": "Harry Potter And The Order Of The Phoenix",
+    "author": "J.K. Rowling",
+    "ISBN": "0439358078",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 1,
+      "day" : 30
+    }
   },
   {
     "title": "Harry Potter and the Half-Blood Prince",
     "author": "J.K. Rowling",
-    "ISBN": "0439785960"
+    "ISBN": "0439785960",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "Martin",
+      "lastname" : "Higgins"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 1,
+      "day" : 31
+    }
   },
   {
     "title": "The Da Vinci Code",
     "author": "Dan Brown",
-    "ISBN": "0307474275"
+    "ISBN": "0307474275",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 2,
+      "day" : 12
+    }
   },
   {
     "title": "Inferno",
     "author": "Dan Brown",
-    "ISBN": "1400079152"
+    "ISBN": "1400079152",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "Martin",
+      "lastname" : "Higgins"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 2,
+      "day" : 12
+    }
   },
   {
     "title": "The Lost Symbol",
     "author": "Dan Brown",
-    "ISBN": "0439139600"
+    "ISBN": "0439139600",
+    "isRented": true,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 3,
+      "day" : 9
+    }
   },
   {
     "title": "The Shining",
     "author": "Stephen King",
-    "ISBN": "0307743659"
+    "ISBN": "0307743659",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 3,
+      "day" : 13
+    }
   },
   {
     "title": "Elevation",
     "author": "Stephen King",
-    "ISBN": "1982102314"
+    "ISBN": "1982102314",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 4,
+      "day" : 15
+    }
   },
   {
     "title": "Metro 2033",
     "author": "Dmitry Glukhovsky",
-    "ISBN": "8448005007"
+    "ISBN": "8448005007",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 5,
+      "day" : 3
+    }
   },
   {
     "title": "Metro 2033",
     "author": "Dmitry Glukhovsky",
-    "ISBN": "8448005007"
+    "ISBN": "8448005007",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "Alan",
+      "lastname" : "Wellbeck"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 5,
+      "day" : 3
+    }
   },
   {
     "title": "Metro 2035",
     "author": "Dmitry Glukhovsky",
-    "ISBN": "8445004018"
+    "ISBN": "8445004018",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "John",
+      "lastname" : "Smith"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 1,
+      "day" : 1
+    }
   },
   {
     "title": "Metro 2035",
     "author": "Dmitry Glukhovsky",
-    "ISBN": "8445004018"
+    "ISBN": "8445004018",
+    "isRented": false,
+    "lastLibraryUser": {
+      "firstname" : "Jonathan",
+      "lastname" : "Perry"
+    },
+    "dateLastRented" : {
+      "year" : 2018,
+      "month" : 1,
+      "day" : 1
+    }
   }
 ]

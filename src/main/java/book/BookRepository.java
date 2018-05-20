@@ -18,9 +18,8 @@ public class BookRepository {
         books.remove(book);
     }
 
-    public List<Book> findBooksInRepositoryByProperties(String title, String author, String isbnNumber) {
+    public List<Book> findBooksInRepositoryByProperties(String title, String author) {
         return books.stream()
-                .filter(i -> i.getIsbnNumber().equals(isbnNumber))
                 .filter(i -> i.getAuthor().equals(author))
                 .filter(i -> i.getTitle().equals(title))
                 .collect(Collectors.toList());

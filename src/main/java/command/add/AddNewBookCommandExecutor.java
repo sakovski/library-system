@@ -12,6 +12,6 @@ public class AddNewBookCommandExecutor implements CommandExecutor {
     public void execute() {
         System.out.println("*New book creator*");
         AddDeleteBookArguments addNewBookArguments = addNewBookArgumentsReader.readArgumentsFromUser();
-        bookService.addToRepository(addNewBookArguments.getTitle(), addNewBookArguments.getAuthor(), addNewBookArguments.getIsbnNumber());
+        bookService.addNewBookToRepository(addNewBookArguments.getTitle(), addNewBookArguments.getAuthor(), addNewBookArguments.getIsbnNumber());
     }
 }

@@ -1,5 +1,8 @@
 package book;
 
+import library_user.LibraryUser;
+
+import java.time.LocalDate;
 import java.util.List;
 
 public class BookFactory {
@@ -9,6 +12,13 @@ public class BookFactory {
         if(isbnValidator.isIsbnNumberValid(isbnNumber)) {
             System.out.println("Book created!");
             return new Book(title, author, isbnNumber);
+        }
+        throw new RuntimeException("Given ISBN number is not valid!");
+    }
+
+    public Book createExistingBook(String title, String author, String isbnNumber, boolean isRented, LibraryUser lastUser, LocalDate dateLastRented) {
+        if(isbnValidator.isIsbnNumberValid(isbnNumber)) {
+            return new Book(title, author, isbnNumber, isRented, lastUser, dateLastRented);
         }
         throw new RuntimeException("Given ISBN number is not valid!");
     }

@@ -3,6 +3,7 @@ package library_user;
 import book.Book;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class LibraryUserService {
@@ -11,7 +12,7 @@ public class LibraryUserService {
     private final LibraryUserFactory libraryUserFactory = new LibraryUserFactory();
 
     public void saveBookForLibraryUser(LibraryUser libraryUserProperties, Book book) {
-        LibraryUser libraryUserCandidate = libraryUserRepository.getUserFromRepository(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname())
+        LibraryUser libraryUserCandidate = getUserFromRepository(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname())
                 .orElseGet(() -> createNewLibraryUser(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname()));
         libraryUserRepository.addBookToLibraryUser(libraryUserCandidate, book);
     }
@@ -21,8 +22,11 @@ public class LibraryUserService {
                 .filter(l -> l.getRentedBooks().size() > 0)
                 .collect(Collectors.toList());
     }
+    public Optional<LibraryUser> getUserFromRepository(String firstname, String lastname) {
+        return libraryUserRepository.getUserFromRepository(firstname, lastname);
+    }
 
-    private LibraryUser createNewLibraryUser(String firstname, String lastname) {
+    public LibraryUser createNewLibraryUser(String firstname, String lastname) {
         LibraryUser newLibraryUser = libraryUserFactory.createUser(firstname, lastname);
         return libraryUserRepository.save(newLibraryUser);
     }

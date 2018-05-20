@@ -1,6 +1,5 @@
 package files;
 
-import command.add.AddDeleteBookArguments;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -9,13 +8,22 @@ import java.util.List;
 
 public class JSONFileParser {
 
-    public List<AddDeleteBookArguments> parseToAddNewBookArguments(String filepath) {
+    public List<JSONFileArguments> parseToJSONFileArguments(String filepath) {
         JSONArray jsonArray = JSONFileReader.getJSONArrayFromFile(filepath);
-        List<AddDeleteBookArguments> newBooksArguments = new ArrayList<>();
+        List<JSONFileArguments> newBooksArguments = new ArrayList<>();
 
         jsonArray.forEach(o -> {
             JSONObject jsonObject = (JSONObject) o;
-            newBooksArguments.add(new AddDeleteBookArguments(jsonObject.getString("title"), jsonObject.getString("author"), jsonObject.getString("ISBN")));
+            newBooksArguments.add(new JSONFileArguments(
+                    jsonObject.getString("title"),
+                    jsonObject.getString("author"),
+                    jsonObject.getString("ISBN"),
+                    jsonObject.getBoolean("isRented"),
+                    jsonObject.getJSONObject("lastLibraryUser").getString("firstname"),
+                    jsonObject.getJSONObject("lastLibraryUser").getString("lastname"),
+                    jsonObject.getJSONObject("dateLastRented").getInt("year"),
+                    jsonObject.getJSONObject("dateLastRented").getInt("month"),
+                    jsonObject.getJSONObject("dateLastRented").getInt("day")));
         });
         return newBooksArguments;
     }

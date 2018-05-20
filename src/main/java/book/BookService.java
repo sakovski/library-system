@@ -7,15 +7,21 @@ import java.util.List;
 
 public class BookService {
 
-    public static final String NO_FOUND_ERROR_MESSAGE = "Book with Title: %s,  Author: %s,  ISBN number: %s not found!";
-    public static final String NO_BOOKS_AVAILABLE_MESSAGE = "No Book with Title: %s,  Author: %s,  ISBN number: %s is available now!";
+    public static final String NO_FOUND_ERROR_MESSAGE = "Book with Title: %s,  Author: %s not found!";
+    public static final String NO_BOOKS_AVAILABLE_MESSAGE = "No Book with Title: %s,  Author: %s is available now!";
 
     private final BookRepository bookRepository = new BookRepository();
     private final BookFactory bookFactory = new BookFactory();
 
-    public void addToRepository(String title, String author, String isbnNumber) {
+    public void addNewBookToRepository(String title, String author, String isbnNumber) {
         Book newBook = bookFactory.createBook(title, author, isbnNumber);
         bookRepository.save(newBook);
+    }
+
+    public Book addBookFromFileToRepository(String title, String author, String isbnNumber, boolean isRented, LibraryUser lastUser, LocalDate dateLastRented) {
+        Book newBook = bookFactory.createExistingBook(title, author, isbnNumber, isRented, lastUser, dateLastRented);
+        bookRepository.save(newBook);
+        return newBook;
     }
 
     public List<Book> findBookByAuthor(String author) {
@@ -30,23 +36,24 @@ public class BookService {
         return bookRepository.findBooksByIsbn(isbn);
     }
 
-    public Book getOneBookByProperties(String title, String author, String isbnNumber) {
-        List<Book> booksCandidates = bookRepository.findBooksInRepositoryByProperties(title, author, isbnNumber);
+    public Book getOneBookByProperties(String title, String author) {
+        List<Book> booksCandidates = bookRepository.findBooksInRepositoryByProperties(title, author);
         if(booksCandidates.size() == 0) {
-            throw new RuntimeException(String.format(NO_FOUND_ERROR_MESSAGE, title, author, isbnNumber));
+            throw new RuntimeException(String.format(NO_FOUND_ERROR_MESSAGE, title, author));
         }
         return booksCandidates.stream()
                 .filter(b -> !b.isRented)
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException(String.format(NO_BOOKS_AVAILABLE_MESSAGE, title, author, isbnNumber)));
+                .orElseThrow(() -> new RuntimeException(String.format(NO_BOOKS_AVAILABLE_MESSAGE, title, author)));
     }
 
     public void removeFromRepository(String title, String author, String isbnNumber) {
-        List<Book> bookToRemove = bookRepository.findBooksInRepositoryByProperties(title, author, isbnNumber);
+        List<Book> bookToRemove = bookRepository.findBooksInRepositoryByProperties(title, author);
         if(bookToRemove.size() == 0)
             throw new RuntimeException(String.format(NO_FOUND_ERROR_MESSAGE, title, author, isbnNumber));
         bookToRemove.stream()
                 .filter(b -> !b.isRented)
+                .filter(b -> b.getIsbnNumber().equals(isbnNumber))
                 .forEach(b -> bookRepository.remove(b));
     }
 
