@@ -15,6 +15,9 @@ public class BookService {
     private final BookFactory bookFactory = new BookFactory();
 
     public void addNewBookToRepository(String title, String author, String isbnNumber) {
+        if(title.isEmpty() || author.isEmpty() || isbnNumber.isEmpty()) {
+            throw new RuntimeException("Book properties cant be empty!");
+        }
         Book newBook = bookFactory.createBook(title, author, isbnNumber);
         bookRepository.save(newBook);
     }

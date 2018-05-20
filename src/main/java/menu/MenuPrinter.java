@@ -5,7 +5,7 @@ import java.util.List;
 public class MenuPrinter {
 
     public static final String WELCOME_MESSAGE = "Welcome to Library System!";
-    public static final String HEADER_MESSAGE = "Please type a command from command list: ";
+    public static final String HEADER_MESSAGE = "Please type a number from command list: ";
 
     private final MenuChoices menuChoices = new MenuChoices();
     private final StringBuilder stringBuilder;

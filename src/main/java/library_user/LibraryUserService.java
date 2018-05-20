@@ -32,6 +32,9 @@ public class LibraryUserService {
     }
 
     public LibraryUser createNewLibraryUser(String firstname, String lastname) {
+        if(firstname.isEmpty() || lastname.isEmpty()) {
+            throw new RuntimeException("User properties cant be empty!");
+        }
         LibraryUser newLibraryUser = libraryUserFactory.createUser(firstname, lastname);
         return libraryUserRepository.save(newLibraryUser);
     }
