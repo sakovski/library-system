@@ -10,7 +10,7 @@ import java.util.List;
 
 public class JSONFileWriter {
 
-    public void writeToJsonFile(List<JSONFileArguments> jsonFileArguments, String path) {
+    public void writeToJsonFile(List<JSONFileArgument> jsonFileArguments, String path) {
         JSONArray mainJsonArray = fillJSONArray(jsonFileArguments);
         writeJSONArrayToFile(mainJsonArray, path);
     }
@@ -30,7 +30,7 @@ public class JSONFileWriter {
 
     }
 
-    private JSONArray fillJSONArray(List<JSONFileArguments> jsonFileArguments) {
+    private JSONArray fillJSONArray(List<JSONFileArgument> jsonFileArguments) {
         JSONArray mainJsonArray = new JSONArray();
         jsonFileArguments.forEach( j -> {
                     JSONObject jsonObject = new JSONObject();
@@ -46,14 +46,14 @@ public class JSONFileWriter {
         return mainJsonArray;
     }
 
-    private JSONObject getLibraryUserObject(JSONFileArguments argument) {
+    private JSONObject getLibraryUserObject(JSONFileArgument argument) {
         JSONObject libraryUserObject = new JSONObject();
         libraryUserObject.put("firstname", argument.getLastLibraryUserFirstname());
         libraryUserObject.put("lastname", argument.getLastLibraryUserLastname());
         return libraryUserObject;
     }
 
-    private JSONObject getLastDateRentedObject(JSONFileArguments argument) {
+    private JSONObject getLastDateRentedObject(JSONFileArgument argument) {
         JSONObject lastDateRentedObject = new JSONObject();
         lastDateRentedObject.put("year", argument.getLastDateRentedYear());
         lastDateRentedObject.put("month", argument.getLastDateRentedMonth());

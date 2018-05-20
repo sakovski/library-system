@@ -11,13 +11,13 @@ public class JSONFileParser {
 
     private JSONFileReader jsonFileReader = new JSONFileReader();
 
-    public List<JSONFileArguments> readFromFileToJSONFileArguments(String filepath) {
+    public List<JSONFileArgument> readFromFileToJSONFileArguments(String filepath) {
         JSONArray jsonArray = jsonFileReader.getJSONArrayFromFile(filepath);
-        List<JSONFileArguments> newBooksArguments = new ArrayList<>();
+        List<JSONFileArgument> newBooksArguments = new ArrayList<>();
 
         jsonArray.forEach(o -> {
             JSONObject jsonObject = (JSONObject) o;
-            newBooksArguments.add(new JSONFileArguments(
+            newBooksArguments.add(new JSONFileArgument(
                     jsonObject.getString("title"),
                     jsonObject.getString("author"),
                     jsonObject.getString("ISBN"),
@@ -31,8 +31,8 @@ public class JSONFileParser {
         return newBooksArguments;
     }
 
-    public List<JSONFileArguments> readFromBooksToJSONFileArguments(List<Book> books) {
-        List<JSONFileArguments> jsonFileArguments = new ArrayList<>();
+    public List<JSONFileArgument> readFromBooksToJSONFileArguments(List<Book> books) {
+        List<JSONFileArgument> jsonFileArguments = new ArrayList<>();
          books.forEach( b -> {
             String currentUserFirstname;
             String currentUserLastname;
@@ -44,7 +44,7 @@ public class JSONFileParser {
                 currentUserFirstname = b.getCurrentLibraryUser().getFirstname();
                 currentUserLastname = b.getCurrentLibraryUser().getLastname();
             }
-            jsonFileArguments.add(new JSONFileArguments(
+            jsonFileArguments.add(new JSONFileArgument(
                     b.getTitle(),
                     b.getAuthor(),
                     b.getIsbnNumber(),

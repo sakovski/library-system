@@ -2,7 +2,7 @@ package core;
 
 import book.Book;
 import book.BookService;
-import files.JSONFileArguments;
+import files.JSONFileArgument;
 import files.JSONFileParser;
 import library_user.LibraryUser;
 import library_user.LibraryUserService;
@@ -17,7 +17,7 @@ public class LibraryInitializer {
     private final LibraryUserService libraryUserService = new LibraryUserService();
 
     public void initializeFromFilePath(String filePath) {
-        List<JSONFileArguments> newBooks = jsonFileParser.readFromFileToJSONFileArguments(filePath);
+        List<JSONFileArgument> newBooks = jsonFileParser.readFromFileToJSONFileArguments(filePath);
         newBooks.forEach(b -> {
             LibraryUser libraryUser = libraryUserService.getUserFromRepository(b.getLastLibraryUserFirstname(), b.getLastLibraryUserLastname())
                     .orElseGet(() -> libraryUserService.createNewLibraryUser(b.getLastLibraryUserFirstname(), b.getLastLibraryUserLastname()));

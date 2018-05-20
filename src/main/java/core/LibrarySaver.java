@@ -2,7 +2,7 @@ package core;
 
 import book.Book;
 import book.BookService;
-import files.JSONFileArguments;
+import files.JSONFileArgument;
 import files.JSONFileParser;
 import files.JSONFileWriter;
 
@@ -16,7 +16,7 @@ public class LibrarySaver {
 
     public void saveBookCatalogueToJsonFile(String filePath) {
         List<Book> books = bookService.getAllBooks();
-        List<JSONFileArguments> jsonFileArguments = jsonFileParser.readFromBooksToJSONFileArguments(books);
+        List<JSONFileArgument> jsonFileArguments = jsonFileParser.readFromBooksToJSONFileArguments(books);
         jsonFileWriter.writeToJsonFile(jsonFileArguments, filePath);
     }
 

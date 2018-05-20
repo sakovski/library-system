@@ -1,6 +1,6 @@
 package files;
 
-public class JSONFileArguments {
+public class JSONFileArgument {
 
     private final String bookTitle;
     private final String bookAuthor;
@@ -12,7 +12,7 @@ public class JSONFileArguments {
     private final int lastDateRentedMonth;
     private final int lastDateRentedDay;
 
-    public JSONFileArguments(String bookTitle, String bookAuthor, String bookIsbnNumber, boolean isBookRented, String lastLibraryUserFirstname, String lastLibraryUserLastname, int lastDateRentedYear, int lastDateRentedMonth, int lastDateRentedDay) {
+    public JSONFileArgument(String bookTitle, String bookAuthor, String bookIsbnNumber, boolean isBookRented, String lastLibraryUserFirstname, String lastLibraryUserLastname, int lastDateRentedYear, int lastDateRentedMonth, int lastDateRentedDay) {
         this.bookTitle = bookTitle;
         this.bookAuthor = bookAuthor;
         this.bookIsbnNumber = bookIsbnNumber;
