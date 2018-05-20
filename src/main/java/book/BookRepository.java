@@ -28,19 +28,19 @@ public class BookRepository {
 
     public List<Book> findBooksByAuthor(String author) {
         return books.stream()
-                .filter(b -> b.getAuthor().equals(author))
+                .filter(b -> b.getAuthor().contains(author))
                 .collect(Collectors.toList());
     }
 
     public List<Book> findBooksByTitle(String title) {
         return books.stream()
-                .filter(b -> b.getTitle().equals(title))
+                .filter(b -> b.getTitle().contains(title))
                 .collect(Collectors.toList());
     }
 
     public List<Book> findBooksByIsbn(String isbnNumber) {
         return books.stream()
-                .filter(b -> b.getIsbnNumber().equals(isbnNumber))
+                .filter(b -> b.getIsbnNumber().contains(isbnNumber))
                 .collect(Collectors.toList());
     }
 
