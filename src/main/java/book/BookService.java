@@ -7,9 +7,9 @@ import java.util.List;
 
 public class BookService {
 
-    public static final String NO_FOUND_ERROR_MESSAGE = "Book with Title: %s,  Author: %s not found!";
-    public static final String NO_BOOKS_AVAILABLE_MESSAGE = "No Book with Title: %s,  Author: %s is available now!";
-    public static final String USER_HAS_NO_BOOKS = "%s %s has no rented books now!";
+    private static final String NO_FOUND_ERROR_MESSAGE = "Book with Title: %s,  Author: %s not found!";
+    private static final String NO_BOOKS_AVAILABLE_MESSAGE = "No Book with Title: %s,  Author: %s is available now!";
+    private static final String USER_HAS_NO_BOOKS = "%s %s has no rented books now!";
 
     private final BookRepository bookRepository = new BookRepository();
     private final BookFactory bookFactory = new BookFactory();

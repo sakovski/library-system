@@ -1,3 +1,5 @@
+package core;
+
 import book.Book;
 import book.BookService;
 import files.JSONFileArguments;

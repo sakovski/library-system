@@ -2,7 +2,7 @@ package command.delete;
 
 import book.BookService;
 import command.CommandExecutor;
-import command.add.AddDeleteBookArguments;
+import command.arguments.AddDeleteBookArguments;
 import command.add.AddDeleteBookArgumentsReader;
 
 public class DeleteBookCommandExecutor implements CommandExecutor {

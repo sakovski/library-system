@@ -1,4 +1,4 @@
-package command;
+package core;
 
 import book.Book;
 import book.BookService;

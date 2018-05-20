@@ -1,4 +1,4 @@
-package command.add;
+package command.arguments;
 
 public class AddDeleteBookArguments {
     private final String title;

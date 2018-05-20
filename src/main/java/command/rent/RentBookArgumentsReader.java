@@ -1,5 +1,6 @@
 package command.rent;
 
+import command.arguments.RentBookArguments;
 import core.UserInputReader;
 
 public class RentBookArgumentsReader {

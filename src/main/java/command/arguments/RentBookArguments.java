@@ -1,4 +1,4 @@
-package command.rent;
+package command.arguments;
 
 public class RentBookArguments {
 

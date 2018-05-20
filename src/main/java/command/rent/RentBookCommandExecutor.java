@@ -3,6 +3,7 @@ package command.rent;
 import book.Book;
 import book.BookService;
 import command.CommandExecutor;
+import command.arguments.RentBookArguments;
 import library_user.LibraryUser;
 import library_user.LibraryUserService;
 
@@ -22,5 +23,6 @@ public class RentBookCommandExecutor implements CommandExecutor {
         LibraryUser userCandidate = libraryUserPropertiesReader.readArgumentsFromUser();
         libraryUserService.saveBookForLibraryUser(userCandidate, bookCandidate);
         bookService.setBookAsRentedWithUser(userCandidate, bookCandidate);
+        System.out.println("Book rented!");
     }
 }
