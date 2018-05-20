@@ -13,7 +13,10 @@ public class LibraryUserService {
 
     public void saveBookForLibraryUser(LibraryUser libraryUserProperties, Book book) {
         LibraryUser libraryUserCandidate = getUserFromRepository(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname())
-                .orElseGet(() -> createNewLibraryUser(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname()));
+                .orElseGet(() -> {
+                    System.out.println("Library user does not exist. Registering new user.");
+                    return createNewLibraryUser(libraryUserProperties.getFirstname(), libraryUserProperties.getLastname());
+                });
         libraryUserRepository.addBookToLibraryUser(libraryUserCandidate, book);
     }
 

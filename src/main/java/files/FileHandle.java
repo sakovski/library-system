@@ -10,7 +10,6 @@ public class FileHandle {
 
     public static InputStream inputStreamFromFile(String absPath) {
         try {
-            //InputStream inputStream = FileHandle.class.getResourceAsStream(path);
             Path filePath = Paths.get(absPath);
             InputStream inputStream = Files.newInputStream(filePath);
             return inputStream;
