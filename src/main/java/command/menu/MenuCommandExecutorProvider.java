@@ -6,6 +6,7 @@ import command.delete.DeleteBookCommandExecutor;
 import command.exit.ExitCommandExecutor;
 import command.library_users_report.LibraryUsersReportCommandExecutor;
 import command.rent.RentBookCommandExecutor;
+import command.return_book.ReturnBookCommandExecutor;
 import command.search.SearchBookByPropertyCommandExecutor;
 import command.search.SearchBooksByWeeksUnrentedCommandExecutor;
 
@@ -16,6 +17,7 @@ public class MenuCommandExecutorProvider {
     private CommandExecutor searchBookByPropertyCommandExecutor = new SearchBookByPropertyCommandExecutor();
     private CommandExecutor searchBooksByTimeUnrentedCommandExecutor = new SearchBooksByWeeksUnrentedCommandExecutor();
     private CommandExecutor rentBookCommandExecutor = new RentBookCommandExecutor();
+    private CommandExecutor returnBookCommandExecutor = new ReturnBookCommandExecutor();
     private CommandExecutor readersReportCommandExecutor = new LibraryUsersReportCommandExecutor();
     private CommandExecutor exitCommandExecutor = new ExitCommandExecutor();
 
@@ -36,6 +38,9 @@ public class MenuCommandExecutorProvider {
             return rentBookCommandExecutor;
         }
         if(userInput.equals("6")) {
+            return returnBookCommandExecutor;
+        }
+        if(userInput.equals("7")) {
             return readersReportCommandExecutor;
         }
         if(userInput.equals("Q")) {

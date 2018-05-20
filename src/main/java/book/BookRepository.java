@@ -25,6 +25,14 @@ public class BookRepository {
                 .collect(Collectors.toList());
     }
 
+    public List<Book> getBooksByUser(String firstname, String lastname) {
+        return books.stream()
+                .filter(b -> b.isRented)
+                .filter(b -> b.getCurrentLibraryUser().getFirstname().equals(firstname))
+                .filter(b -> b.getCurrentLibraryUser().getLastname().equals(lastname))
+                .collect(Collectors.toList());
+    }
+
     public List<Book> findBooksByAuthor(String author) {
         return books.stream()
                 .filter(b -> b.getAuthor().contains(author))

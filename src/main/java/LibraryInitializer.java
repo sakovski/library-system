@@ -26,7 +26,9 @@ public class LibraryInitializer {
                     b.isBookRented(),
                     libraryUser,
                     LocalDate.of(b.getLastDateRentedYear(), b.getLastDateRentedMonth(), b.getLastDateRentedDay()));
-            libraryUserService.saveBookForLibraryUser(libraryUser, newBook);
+            if(newBook.isRented) {
+                libraryUserService.saveBookForLibraryUser(libraryUser, newBook);
+            }
         });
     }
 }
