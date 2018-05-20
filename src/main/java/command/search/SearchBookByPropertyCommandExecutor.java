@@ -15,14 +15,14 @@ public class SearchBookByPropertyCommandExecutor implements CommandExecutor {
     public static final String ISBN_PREFIX = "-I";
 
     private final BookService bookService = new BookService();
-    private final SearchBookByPropertyArgumentsReader searchBookByPropertyArgumentsReader = new SearchBookByPropertyArgumentsReader();
+    private final SearchBookArgumentReader searchBookArgumentReader = new SearchBookArgumentReader();
     private final SearchBookByPropertyArgumentsParser searchBookByPropertyArgumentsParser = new SearchBookByPropertyArgumentsParser();
     private final SearchReportService searchReportService = new SearchReportService();
 
     @Override
     public void execute() {
         System.out.println(String.format(INFO_MESSAGE, TITLE_PREFIX, AUTHOR_PREFIX, ISBN_PREFIX));
-        String argument = searchBookByPropertyArgumentsReader.readArgumentsFromUser();
+        String argument = searchBookArgumentReader.readArgumentsFromUser();
         SearchBookByPropertyArgument searchBookByPropertyArgument = searchBookByPropertyArgumentsParser.parseUserArgument(argument);
         if(searchBookByPropertyArgument.getPrefix().equals(TITLE_PREFIX)) {
             List<Book> foundBooks = bookService.findBookByTitle(searchBookByPropertyArgument.getArgument());

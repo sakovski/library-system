@@ -17,10 +17,9 @@ public class LibraryUserService {
     }
 
     public List<LibraryUser> getAllUsersWithRentedBooks() {
-        List<LibraryUser> test = libraryUserRepository.getLibraryUsers();
-                //.filter(l -> l.getAmountOfRentedBooks() > 0)
-               // .collect(Collectors.toList());
-        return test;
+        return libraryUserRepository.getLibraryUsers().stream()
+                .filter(l -> l.getRentedBooks().size() > 0)
+                .collect(Collectors.toList());
     }
 
     private LibraryUser createNewLibraryUser(String firstname, String lastname) {

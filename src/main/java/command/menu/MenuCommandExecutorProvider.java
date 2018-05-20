@@ -7,17 +7,17 @@ import command.exit.ExitCommandExecutor;
 import command.library_users_report.LibraryUsersReportCommandExecutor;
 import command.rent.RentBookCommandExecutor;
 import command.search.SearchBookByPropertyCommandExecutor;
-import command.search.SearchBooksByTimeUnrentedCommandExecutor;
+import command.search.SearchBooksByWeeksUnrentedCommandExecutor;
 
 public class MenuCommandExecutorProvider {
 
     private CommandExecutor addNewBookCommandExecutor = new AddNewBookCommandExecutor();
     private CommandExecutor deleteBookCommandExecutor = new DeleteBookCommandExecutor();
     private CommandExecutor searchBookByPropertyCommandExecutor = new SearchBookByPropertyCommandExecutor();
-    private CommandExecutor searchBooksByTimeUnrentedCommandExecutor = new SearchBooksByTimeUnrentedCommandExecutor();
+    private CommandExecutor searchBooksByTimeUnrentedCommandExecutor = new SearchBooksByWeeksUnrentedCommandExecutor();
     private CommandExecutor rentBookCommandExecutor = new RentBookCommandExecutor();
     private CommandExecutor readersReportCommandExecutor = new LibraryUsersReportCommandExecutor();
-    private ExitCommandExecutor exitCommandExecutor = new ExitCommandExecutor();
+    private CommandExecutor exitCommandExecutor = new ExitCommandExecutor();
 
     public CommandExecutor getExecutor(String userInput) {
         if(userInput.equals("1")) {

@@ -2,7 +2,7 @@ package command.search;
 
 import core.UserInputReader;
 
-public class SearchBookByPropertyArgumentsReader {
+public class SearchBookArgumentReader {
 
     private final UserInputReader userInputReader = new UserInputReader();
 

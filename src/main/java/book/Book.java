@@ -17,7 +17,7 @@ public class Book {
         this.title = title;
         this.author = author;
         this.isbnNumber = isbnNumber;
-        dateLastRent = null;
+        dateLastRent = LocalDate.now();
         currentLibraryUser = null;
         isRented = false;
     }

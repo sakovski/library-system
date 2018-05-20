@@ -55,4 +55,8 @@ public class BookService {
         book.setDateLastRent(LocalDate.now());
         book.isRented = true;
     }
+
+    public List<Book> getBooksByWeeksUntrented(int weeks) {
+        return bookRepository.findBooksByWeeksUnrented(weeks);
+    }
 }
