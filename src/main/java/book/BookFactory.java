@@ -3,7 +3,6 @@ package book;
 import library_user.LibraryUser;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class BookFactory {
     private final IsbnValidator isbnValidator = new IsbnValidator();

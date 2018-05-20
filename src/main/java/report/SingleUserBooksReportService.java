@@ -8,7 +8,7 @@ public class SingleUserBooksReportService {
 
     public static final String BOOKS_FOUND = "Books found: %s";
 
-    SearchReportService searchReportService = new SearchReportService();
+    private final SearchReportService searchReportService = new SearchReportService();
 
     public void printUserReport(List<Book> books) {
         searchReportService.printSearchReport(books);

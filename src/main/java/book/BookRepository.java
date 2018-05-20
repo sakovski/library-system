@@ -54,7 +54,7 @@ public class BookRepository {
     public List<Book> findBooksByWeeksUnrented(int weeks) {
         return books.stream()
                 .filter(b -> ChronoUnit.WEEKS.between(b.getDateLastRent(), LocalDateTime.now()) >= weeks)
-                .filter(b -> b.isRented == false)
+                .filter(b -> !b.isRented)
                 .collect(Collectors.toList());
     }
 
