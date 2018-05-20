@@ -49,4 +49,6 @@ public class BookRepository {
                 .filter(b -> b.isRented == false)
                 .collect(Collectors.toList());
     }
+
+    public List<Book> getBooks() {return books;}
 }

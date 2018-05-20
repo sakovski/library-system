@@ -15,7 +15,7 @@ public class LibraryInitializer {
     private final LibraryUserService libraryUserService = new LibraryUserService();
 
     public void initializeFromFilePath(String filePath) {
-        List<JSONFileArguments> newBooks = jsonFileParser.parseToJSONFileArguments(filePath);
+        List<JSONFileArguments> newBooks = jsonFileParser.readFromFileToJSONFileArguments(filePath);
         newBooks.forEach(b -> {
             LibraryUser libraryUser = libraryUserService.getUserFromRepository(b.getLastLibraryUserFirstname(), b.getLastLibraryUserLastname())
                     .orElseGet(() -> libraryUserService.createNewLibraryUser(b.getLastLibraryUserFirstname(), b.getLastLibraryUserLastname()));

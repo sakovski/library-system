@@ -1,5 +1,6 @@
 package files;
 
+import book.Book;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -8,8 +9,10 @@ import java.util.List;
 
 public class JSONFileParser {
 
-    public List<JSONFileArguments> parseToJSONFileArguments(String filepath) {
-        JSONArray jsonArray = JSONFileReader.getJSONArrayFromFile(filepath);
+    private JSONFileReader jsonFileReader = new JSONFileReader();
+
+    public List<JSONFileArguments> readFromFileToJSONFileArguments(String filepath) {
+        JSONArray jsonArray = jsonFileReader.getJSONArrayFromFile(filepath);
         List<JSONFileArguments> newBooksArguments = new ArrayList<>();
 
         jsonArray.forEach(o -> {
@@ -26,5 +29,33 @@ public class JSONFileParser {
                     jsonObject.getJSONObject("dateLastRented").getInt("day")));
         });
         return newBooksArguments;
+    }
+
+    public List<JSONFileArguments> readFromBooksToJSONFileArguments(List<Book> books) {
+        List<JSONFileArguments> jsonFileArguments = new ArrayList<>();
+         books.forEach( b -> {
+            String currentUserFirstname;
+            String currentUserLastname;
+            if(b.getCurrentLibraryUser() == null) {
+                currentUserFirstname = "NONE";
+                currentUserLastname = "NONE";
+            }
+            else {
+                currentUserFirstname = b.getCurrentLibraryUser().getFirstname();
+                currentUserLastname = b.getCurrentLibraryUser().getLastname();
+            }
+            jsonFileArguments.add(new JSONFileArguments(
+                    b.getTitle(),
+                    b.getAuthor(),
+                    b.getIsbnNumber(),
+                    b.isRented,
+                    currentUserFirstname,
+                    currentUserLastname,
+                    b.getDateLastRent().getYear(),
+                    b.getDateLastRent().getMonthValue(),
+                    b.getDateLastRent().getDayOfMonth()));
+                }
+        );
+         return jsonFileArguments;
     }
 }

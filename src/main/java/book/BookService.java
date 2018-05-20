@@ -66,4 +66,6 @@ public class BookService {
     public List<Book> getBooksByWeeksUntrented(int weeks) {
         return bookRepository.findBooksByWeeksUnrented(weeks);
     }
+
+    public List<Book> getAllBooks() {return bookRepository.getBooks();}
 }

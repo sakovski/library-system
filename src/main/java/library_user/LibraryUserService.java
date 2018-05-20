@@ -20,6 +20,8 @@ public class LibraryUserService {
     public List<LibraryUser> getAllUsersWithRentedBooks() {
         return libraryUserRepository.getLibraryUsers().stream()
                 .filter(l -> l.getRentedBooks().size() > 0)
+                .filter(l -> !l.getFirstname().equals("NONE"))
+                .filter(l -> !l.getLastname().equals("NONE"))
                 .collect(Collectors.toList());
     }
     public Optional<LibraryUser> getUserFromRepository(String firstname, String lastname) {

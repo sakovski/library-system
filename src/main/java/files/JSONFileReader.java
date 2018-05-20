@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class JSONFileReader {
 
-    public static String getJSONStringFromFile(String path) {
+    public String getJSONStringFromFile(String path) {
         Scanner scanner;
         InputStream in = FileHandle.inputStreamFromFile(path);
         try {
@@ -20,7 +20,7 @@ public class JSONFileReader {
         }
     }
 
-    public static JSONArray getJSONArrayFromFile(String path) {
+    public JSONArray getJSONArrayFromFile(String path) {
         return new JSONArray(getJSONStringFromFile(path));
     }
 }
