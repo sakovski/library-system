@@ -11,8 +11,12 @@ public class LibraryApplication {
     private LibraryInitializer libraryInitializer = new LibraryInitializer();
 
     public void run(String[] arguments) {
-        System.out.println(arguments[0]);
-        libraryInitializer.initializeFromFilePath(arguments[0]);
+        try{
+            libraryInitializer.initializeFromFilePath(arguments[0]);
+        } catch(Exception e) {
+            System.out.println("Library file not loaded! " + e.getMessage());
+        }
+
         menuPrinter.printWelcomeMessage();
 
         while (true) {
